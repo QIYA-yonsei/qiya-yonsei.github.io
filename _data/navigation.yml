@@ -3,5 +3,7 @@ main:
     url: /about/
   - title: "Timetable"
     url: /timetable/
-  - title: "Register
+  - title: "Register"
     url: /register/
+  - archive: "Archive"
+    url: /https://qiya-yonsei.github.io/qff-2024/
