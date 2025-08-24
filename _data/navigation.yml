@@ -3,5 +3,5 @@ main:
     url: /about/
   - title: "Timetable"
     url: /timetable/
-  - title: "Apply"
-    url: /apply/
+  - title: "Register
+    url: /register/
