@@ -1,3 +1,4 @@
+# main links
 main:
   - title: "About"
     url: /about/
@@ -5,3 +6,7 @@ main:
     url: /timetable/
   - title: "Apply"
     url: /apply/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
