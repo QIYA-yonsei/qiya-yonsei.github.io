@@ -1,9 +1,0 @@
-main:
-  - title: "About"
-    url: /about/
-  - title: "Timetable"
-    url: /timetable/
-  - title: "Register"
-    url: /register/
-  - title: "Archive"
-    url: /qff-2024/
