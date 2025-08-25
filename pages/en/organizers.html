@@ -30,7 +30,8 @@
       }
       .organizer-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
       }
       .organizer-details {
         display: none;
@@ -97,11 +98,6 @@
             href="../../pages/en/about.html"
             class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
             >About</a
-          >
-          <a
-            href="../../pages/en/organizers.html"
-            class="font-extrabold text-[#17106A] dark:text-white transition duration-300"
-            >Organizers</a
           >
           <a
             href="../../pages/en/timetable.html"
@@ -189,20 +185,50 @@
           ></div>
 
           <!-- Justin J.H. Kim -->
-          <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-12" data-name="Justin J.H. Kim" data-title="Lead Organizer" data-affiliation="Yonsei University" data-contact="justin.kim@example.com" data-description="Justin is the lead organizer of the Qiskit Fall Festival @ Yonsei. He is a passionate advocate for quantum education and community building. He has extensive experience in quantum computing research and community leadership.">
+          <div
+            class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-12"
+            data-name="Justin J.H. Kim"
+          >
             <div class="flex flex-col md:flex-row items-center gap-8">
               <img
-                src="https://via.placeholder.com/150"
+                src="../../assets/image/profiles/jhk.JPG"
                 alt="Justin J.H. Kim"
-                class="rounded-full shadow-lg w-36 h-36"
+                class="rounded-full shadow-lg w-36 h-35"
               />
               <div class="text-center md:text-left">
-                <h3 class="text-2xl font-bold">Justin J.H. Kim</h3>
-                <p class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]">Lead Organizer</p>
-                <p class="text-sm text-gray-800 dark:text-gray-400">Affiliation: Yonsei University</p>
-                <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-2">
-                  Justin is the lead organizer of the Qiskit Fall Festival @ Yonsei. He is a passionate advocate for quantum education and community building.
+                <div class="flex items-center gap-3">
+                  <h3 class="text-2xl font-bold">Justin J.H. Kim</h3>
+                  <a
+                    href="https://www.linkedin.com/in/justin-kim-b82447312/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                  >
+                    <i data-feather="linkedin" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="https://github.com/kimmmjh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                  >
+                    <i data-feather="github" class="w-5 h-5"></i>
+                  </a>
+                </div>
+                <p class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]">
+                  Lead Organizer
+                </p>
+                <p class="text-sm text-gray-800 dark:text-gray-400">
+                  Affiliation: School of Integrated Technology
+                </p>
+                <p class="text-sm text-gray-800 dark:text-gray-400">
+                  Contact: j.hwankim@yonsei.ac.kr
+                </p>
+                <p
+                  class="text-gray-600 dark:text-gray-300 leading-relaxed mt-2"
+                >
+                  Justin is the lead organizer of the Qiskit Fall Festival @
+                  Yonsei. He worked on the event page and led the team.
                 </p>
               </div>
             </div>
@@ -211,59 +237,154 @@
           <!-- 2x2 Grid -->
           <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
             <!-- Jeongbin Jo -->
-            <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" data-name="Jeongbin Jo" data-title="Co-Organizer" data-affiliation="Yonsei University" data-contact="jeongbin.jo@example.com" data-description="Jeongbin is a key organizer, focusing on the technical aspects of the event.">
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Jeongbin Jo"
+            >
               <div class="flex items-center gap-6">
                 <img
                   src="../../assets/image/profiles/Jeongbin-Jo.jpg"
                   alt="Jeongbin Jo"
-                  class="rounded-full shadow-lg w-24 h-24"
+                  class="rounded-full shadow-lg w-24 h-23"
                 />
                 <div>
-                  <h4 class="text-xl font-bold">Jeongbin Jo</h4>
-                  <p class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]">Co-Organizer</p>
-                  <p class="text-sm text-gray-800 dark:text-gray-400">Major: Physics</p>
-                  <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
-                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1">
-                    Jeongbin Is a Qiskit Advocate, and manages the event website and materials.
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Jeongbin Jo</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Department of Physics
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: jeongbin033@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Jeongbin Is a Qiskit Advocate, and manages the event website
+                    and materials.
                   </p>
                 </div>
               </div>
             </div>
 
             <!-- Hyungmin Lim -->
-            <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" data-name="Hyungmin Lim" data-title="Co-Organizer" data-affiliation="Yonsei University" data-contact="hyungmin.lim@example.com" data-description="Hyungmin is responsible for the event's logistics and operations. He ensures the smooth execution of all event activities.">
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Hyungmin Lim"
+            >
               <div class="flex items-center gap-6">
                 <img
                   src="https://via.placeholder.com/150"
                   alt="Hyungmin Lim"
-                  class="rounded-full shadow-lg w-24 h-24"
+                  class="rounded-full shadow-lg w-24 h-23"
                 />
                 <div>
-                  <h4 class="text-xl font-bold">Hyungmin Lim</h4>
-                  <p class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]">Co-Organizer</p>
-                  <p class="text-sm text-gray-800 dark:text-gray-400">Affiliation: Yonsei University</p>
-                  <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
-                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1">
-                    Hyungmin is responsible for the event's logistics and operations.
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Hyungmin Lim</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: School of Electrical and Electronic Engineering
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: him030107@gmail.com
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Hyungmin is responsible for the event's logistics and
+                    operations.
                   </p>
                 </div>
               </div>
             </div>
 
             <!-- Haesung Kim -->
-            <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" data-name="Haesung Kim" data-title="Co-Organizer" data-affiliation="Yonsei University" data-contact="haesung.kim@example.com" data-description="Haesung manages the marketing and promotion of the festival. He is key in reaching out to the community and ensuring high attendance.">
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Haesung Kim"
+            >
               <div class="flex items-center gap-6">
                 <img
                   src="https://via.placeholder.com/150"
                   alt="Haesung Kim"
-                  class="rounded-full shadow-lg w-24 h-24"
+                  class="rounded-full shadow-lg w-24 h-23"
                 />
                 <div>
-                  <h4 class="text-xl font-bold">Haesung Kim</h4>
-                  <p class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]">Co-Organizer</p>
-                  <p class="text-sm text-gray-800 dark:text-gray-400">Affiliation: Yonsei University</p>
-                  <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
-                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1">
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Haesung Kim</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Department of Physics
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: jeongbin033@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
                     Haesung manages the marketing and promotion of the festival.
                   </p>
                 </div>
@@ -271,19 +392,50 @@
             </div>
 
             <!-- Kangmin Ha -->
-            <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" data-name="Kangmin Ha" data-title="Co-Organizer" data-affiliation="Yonsei University" data-contact="kangmin.ha@example.com" data-description="Kangmin is in charge of the challenge day and workshops. He designs and oversees the hands-on quantum programming challenges.">
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Kangmin Ha"
+            >
               <div class="flex items-center gap-6">
                 <img
                   src="https://via.placeholder.com/150"
                   alt="Kangmin Ha"
-                  class="rounded-full shadow-lg w-24 h-24"
+                  class="rounded-full shadow-lg w-24 h-23"
                 />
                 <div>
-                  <h4 class="text-xl font-bold">Kangmin Ha</h4>
-                  <p class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]">Co-Organizer</p>
-                  <p class="text-sm text-gray-800 dark:text-gray-400">Affiliation: Yonsei University</p>
-                  <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
-                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1">
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Kangmin Ha</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Nano Science and Engineering
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: riverst03@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
                     Kangmin is in charge of the challenge day and workshops.
                   </p>
                 </div>
@@ -360,5 +512,5 @@
         });
       });
     </script>
-    </body>
+  </body>
 </html>
