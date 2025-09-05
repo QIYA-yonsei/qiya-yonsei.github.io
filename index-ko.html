@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qiskit Fall Festival @ Yonsei 2025</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .hero-background {
+        background-image: url("assets/image/splash.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .hero-background::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
+    </style>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header & Navigation Bar -->
+    <header
+      id="header"
+      class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm dark:bg-gray-800/80"
+    >
+      <nav
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <!-- Site Title -->
+        <div class="flex-1">
+          <a
+            href="index-ko.html"
+            class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]"
+          >
+            Qiskit Fall Fest @ Yonsei
+          </a>
+        </div>
+
+        <!-- Center Logo -->
+        <div class="flex justify-center">
+          <a href="index-ko.html">
+            <img
+              src="assets/image/qiya-black.png"
+              alt="QIYA Logo"
+              class="h-20 dark:invert"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <div style="display: none" class="text-gray-500 dark:text-gray-400">
+              QIYA Logo
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex flex-1 justify-end items-center space-x-8">
+          <a
+            href="pages/ko/about-ko.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >About</a
+          >
+          <a
+            href="pages/ko/timetable-ko.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >Timetable</a
+          >
+          <a
+            href="pages/ko/archive-ko.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >Archive</a
+          >
+          <a
+            href="https://docs.google.com/forms/u/0/"
+            class="bg-[#17106A] text-white px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md whitespace-nowrap"
+            >지금 등록</a
+          >
+          <div class="text-sm">
+            <a
+              href="index.html"
+              class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+              >EN</a
+            >
+            <span class="mx-1">|</span>
+            <span class="font-bold text-[#17106A] dark:text-white">KR</span>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex-1 flex justify-end">
+          <button id="mobile-menu-button">
+            <i
+              data-feather="menu"
+              class="h-6 w-6 text-gray-700 dark:text-gray-300"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+        <a
+          href="pages/ko/about-ko.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >About</a
+        >
+        <a
+          href="pages/ko/timetable-ko.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >Timetable</a
+        >
+        <a
+          href="pages/ko/archive-ko.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >Archive</a
+        >
+        <a
+          href="https://docs.google.com/forms/u/0/"
+          class="block bg-[#17106A] text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md"
+          >지금 등록</a
+        >
+        <div class="text-sm text-center pt-2">
+          <a
+            href="index.html"
+            class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+            >EN</a
+          >
+          <span class="mx-1">|</span>
+          <span class="font-bold text-[#17106A] dark:text-white">KR</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-background text-white py-24 sm:py-32">
+        <div class="container mx-auto px-6 text-center hero-content">
+          <h1
+            class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tight"
+          >
+            Qiskit Fall Festival @ Yonsei 2025
+          </h1>
+          <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            2025년 10월 31일 - 11월 1일 | 연세대학교 신촌캠퍼스
+          </p>
+          <a
+            href="#register"
+            class="bg-white text-[#17106A] font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-xl text-lg"
+          >
+            지금 등록
+          </a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <div
+            class="max-w-4xl mx-auto text-center text-gray-600 dark:text-gray-300 leading-relaxed grid md:grid-cols-2 gap-12 items-center"
+          >
+            <!-- Light mode image -->
+            <img
+              src="assets/image/qff-2024-logo-pink.png"
+              alt="Qiskit Fall Festival Logo"
+              class="rounded-lg shadow-lg w-full h-auto dark:hidden"
+            />
+            <!-- Dark mode image -->
+            <img
+              src="assets/image/qff-2024-logo-dark.png"
+              alt="Qiskit Fall Festival Logo"
+              class="rounded-lg shadow-lg w-full h-auto hidden dark:block"
+            />
+            <p>
+              Qiskit Fall Festival @ Yonsei는 QIYA(Quantum Informatics at Yonsei
+              Academy)가 주최하는 연세대학교의 연례 행사입니다. 우리의 임무는
+              학생, 연구원 및 업계 전문가를 하나로 모으는 것입니다. 전문가이든
+              양자 여정을 막 시작했든 관계없이 영감을 주는 강연, 실습 워크숍,
+              귀중한 네트워킹 기회를 찾을 수 있습니다. 양자 알고리즘, 하드웨어
+              및 소프트웨어의 최신 발전에 대해 알아보세요.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timetable Section -->
+      <section id="timetable" class="py-20 bg-slate-50 dark:bg-gray-950">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">시간표</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+          <div
+            class="max-w-3xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            <!-- Day 1 -->
+            <div
+              class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-indigo-500 dark:border-indigo-400"
+            >
+              <h3 class="text-xl font-bold mb-1">1일차: 강연 세션</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                2025년 10월 31일
+              </p>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>
+                  <span class="font-semibold">14:00 - 14:40</span> - 세션 1 :
+                  임형민
+                </li>
+                <li>
+                  <span class="font-semibold">14:50 - 15:30:</span> - 세션 2 :
+                  준비중
+                </li>
+                <li>
+                  <span class="font-semibold">15:40 - 16:20</span> - 세션 3 :
+                  준비중
+                </li>
+                <li>
+                  <span class="font-semibold">16:30 - 17:10</span> - 세션 4 :
+                  준비중
+                </li>
+              </ul>
+            </div>
+            <!-- Day 2 -->
+            <div
+              class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-purple-500 dark:border-purple-400"
+            >
+              <h3 class="text-xl font-bold mb-1">2일차: 챌린지 데이</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                2025년 11월 1일
+              </p>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>
+                  <span class="font-semibold">13:00 - 13:40</span> - Intro to
+                  Linear Algebra : 김해성
+                </li>
+                <li>
+                  <span class="font-semibold">13:50 - 14:30</span> - Basics of
+                  Quantum Informatics : 조정빈
+                </li>
+                <li>
+                  <span class="font-semibold">14:40 - 15:20</span> - Getting
+                  Started with Qiskit : Justin J.H. Kim
+                </li>
+                <li>
+                  <span class="font-semibold">15:30 - 17:30</span> - Challenge
+                </li>
+                <li>
+                  <span class="font-semibold">17:30 - 18:30</span> - 해설 및
+                  시상 : 하강민
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Register Section -->
+      <section id="register" class="py-20 bg-indigo-50 dark:bg-indigo-900/20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-4">지금 등록하세요! 무료입니다!</h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            지금 무료로 등록하여 업계 연구원 및 전문가로부터 양자 컴퓨팅에 대해
+            배우십시오. 또한 챌린지 데이에는 Qiskit으로 양자 프로그래밍을 실제로
+            시도해 볼 수 있습니다!
+          </p>
+          <a
+            href="#"
+            class="bg-[#17106A] text-white font-bold px-8 py-4 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 transform hover:scale-105 shadow-xl text-lg"
+          >
+            지금 등록
+          </a>
+        </div>
+      </section>
+
+      <!-- Archive Section -->
+      <section id="archive" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">기록</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+          <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
+            <a
+              href="https://qiya-yonsei.github.io/qff-2024/"
+              class="bg-gray-100 text-gray-700 px-5 py-2 rounded-full hover:bg-indigo-100 hover:text-indigo-700 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-indigo-500/50 dark:hover:text-white transition duration-300"
+              >Qiskit Fall Festival @ Yonsei 2024</a
+            >
+          </div>
+          <!-- Centered & Responsive Video Wrapper -->
+          <div
+            class="max-w-3xl mx-auto flex flex-wrap justify-center mt-12 aspect-video"
+          >
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/videoseries?si=qncdX1fNawoA0NQn&amp;list=PLLXS3g7gThWJEPHs4N1k5NVgH_dguYWuX"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white dark:bg-black/50 py-10">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center items-center space-x-6 mb-4">
+          <a
+            href="https://www.instagram.com/qiya_yonsei/"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="instagram"></i
+          ></a>
+          <a
+            href="https://github.com/QIYA-yonsei"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="github"></i
+          ></a>
+          <a
+            ref="https://www.youtube.com/@qiyayonsei"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="youtube"></i
+          ></a>
+        </div>
+        <p>
+          &copy; 2025 Quantum Informatics at Yonsei Academy. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // --- Feather Icons Initialization ---
+      feather.replace();
+
+      // --- Mobile Menu Toggle ---
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+      mobileMenu.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+
+      // --- Dark Mode Toggle ---
+      const themeToggle = document.getElementById("theme-toggle");
+      themeToggle.addEventListener("click", () => {
+        // Toggle dark class on html element
+        document.documentElement.classList.toggle("dark");
+
+        // Update localStorage
+        if (document.documentElement.classList.contains("dark")) {
+          localStorage.theme = "dark";
+        } else {
+          localStorage.theme = "light";
+        }
+        // Re-render icons to reflect theme change
+        feather.replace();
+      });
+    </script>
+  </body>
+</html>

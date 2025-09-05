@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizers | Qiskit Fall Festival @ Yonsei 2025</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+      /* Use Inter as the default font */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .organizer-card {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .organizer-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .organizer-details {
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+      .organizer-details.expanded {
+        display: block;
+        max-height: 500px; /* Adjust as needed */
+      }
+    </style>
+    <script>
+      // Set theme on initial load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header & Navigation Bar -->
+    <header
+      id="header"
+      class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm dark:bg-gray-800/80"
+    >
+      <nav
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <!-- Site Title -->
+        <div class="flex-1">
+          <a
+            href="../../index.html"
+            class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]"
+          >
+            Qiskit Fall Fest @ Yonsei
+          </a>
+        </div>
+
+        <!-- Center Logo -->
+        <div class="flex justify-center">
+          <a href="../../index.html">
+            <img
+              src="../../assets/image/qiya-black.png"
+              alt="QIYA Logo"
+              class="h-20 dark:invert"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <div style="display: none" class="text-gray-500 dark:text-gray-400">
+              QIYA Logo
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex flex-1 justify-end items-center space-x-8">
+          <a
+            href="../../pages/en/about.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >About</a
+          >
+          <a
+            href="../../pages/en/timetable.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >Timetable</a
+          >
+          <a
+            href="../../pages/en/archive.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >Archives</a
+          >
+          <a
+            href="https://docs.google.com/forms/u/0/"
+            class="bg-[#17106A] text-white px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md whitespace-nowrap"
+            >Register Now</a
+          >
+          <div class="text-sm">
+            <span class="font-bold text-[#17106A] dark:text-white">EN</span>
+            <span class="mx-1">|</span>
+            <a
+              href="../ko/organizers-ko.html"
+              class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+              >KR</a
+            >
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex-1 flex justify-end">
+          <button id="mobile-menu-button">
+            <i
+              data-feather="menu"
+              class="h-6 w-6 text-gray-700 dark:text-gray-300"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+        <a
+          href="../../pages/en/about.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >About</a
+        >
+        <a
+          href="../../pages/en/organizers.html"
+          class="font-extrabold text-[#17106A] dark:text-white py-2"
+          >Organizers</a
+        >
+        <a
+          href="../../pages/en/timetable.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >Timetable</a
+        >
+        <a
+          href="../../pages/en/archive.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >Archives</a
+        >
+        <a
+          href="https://docs.google.com/forms/u/0/"
+          class="block bg-[#17106A] text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md"
+          >Register Now</a
+        >
+        <div class="text-sm text-center pt-2">
+          <span class="font-bold text-[#17106A] dark:text-white">EN</span>
+          <span class="mx-1">|</span>
+          <a
+            href="../ko/organizers-ko.html"
+            class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+            >KR</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Organizers Section -->
+      <section id="organizers" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">Organizers</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+
+          <!-- Justin J.H. Kim -->
+          <div
+            class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-12"
+            data-name="Justin J.H. Kim"
+          >
+            <div class="flex flex-col md:flex-row items-center gap-8">
+              <img
+                src="../../assets/image/profiles/jhk.JPG"
+                alt="Justin J.H. Kim"
+                class="rounded-full shadow-lg w-36 h-35"
+              />
+              <div class="text-center md:text-left">
+                <div class="flex items-center gap-3">
+                  <h3 class="text-2xl font-bold">Justin J.H. Kim</h3>
+                  <a
+                    href="https://www.linkedin.com/in/justin-kim-b82447312/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                  >
+                    <i data-feather="linkedin" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="https://github.com/kimmmjh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                  >
+                    <i data-feather="github" class="w-5 h-5"></i>
+                  </a>
+                </div>
+                <p class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]">
+                  Lead Organizer
+                </p>
+                <p class="text-sm text-gray-800 dark:text-gray-400">
+                  Affiliation: School of Integrated Technology
+                </p>
+                <p class="text-sm text-gray-800 dark:text-gray-400">
+                  Contact: j.hwankim@yonsei.ac.kr
+                </p>
+                <p
+                  class="text-gray-600 dark:text-gray-300 leading-relaxed mt-2"
+                >
+                  Justin is the lead organizer of the Qiskit Fall Festival @
+                  Yonsei 2025. He worked on the event page and led the team.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2x2 Grid -->
+          <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+            <!-- Jeongbin Jo -->
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Jeongbin Jo"
+            >
+              <div class="flex items-center gap-6">
+                <img
+                  src="../../assets/image/profiles/Jeongbin-Jo.jpg"
+                  alt="Jeongbin Jo"
+                  class="rounded-full shadow-lg w-24 h-23"
+                />
+                <div>
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Jeongbin Jo</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Department of Physics
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: jeongbin033@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Jeongbin Is a Qiskit Advocate, and manages the event website
+                    and materials.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hyungmin Lim -->
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Hyungmin Lim"
+            >
+              <div class="flex items-center gap-6">
+                <img
+                  src="../../assets/image/profiles/Hyungmin Lim.jpeg"
+                  alt="Hyungmin Lim"
+                  class="rounded-full shadow-lg w-24 h-24"
+                />
+                <div>
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Hyungmin Lim</h4>
+                    <a
+                      href="https://www.linkedin.com/in/hyungmin-lim"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: School of Electrical and Electronic Engineering
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: him030107@gmail.com
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Hyungmin is responsible for the event's logistics and
+                    operations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Haesung Kim -->
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Haesung Kim"
+            >
+              <div class="flex items-center gap-6">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Haesung Kim"
+                  class="rounded-full shadow-lg w-24 h-23"
+                />
+                <div>
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Haesung Kim</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Department of Physics
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: jeongbin033@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Haesung manages the marketing and promotion of the festival.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kangmin Ha -->
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Kangmin Ha"
+            >
+              <div class="flex items-center gap-6">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Kangmin Ha"
+                  class="rounded-full shadow-lg w-24 h-23"
+                />
+                <div>
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Kangmin Ha</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Nano Science and Engineering
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: riverst03@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Kangmin is in charge of the challenge day and workshops.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white dark:bg-black/50 py-10">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center items-center space-x-6 mb-4">
+          <a
+            href="https://www.instagram.com/qiya_yonsei/"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="instagram"></i
+          ></a>
+          <a
+            href="https://github.com/QIYA-yonsei"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="github"></i
+          ></a>
+          <a
+            ref="https://www.youtube.com/@qiyayonsei"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="youtube"></i
+          ></a>
+        </div>
+        <p>
+          &copy; 2025 Quantum Informatics at Yonsei Academy. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Wait for the DOM to be fully loaded before running scripts
+      window.addEventListener("DOMContentLoaded", (event) => {
+        // --- Feather Icons Initialization ---
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+        mobileMenu.addEventListener("click", (e) => {
+          if (e.target.tagName === "A") {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+
+        // --- Dark Mode Toggle ---
+        const themeToggle = document.getElementById("theme-toggle");
+        themeToggle.addEventListener("click", () => {
+          // Toggle dark class on html element
+          document.documentElement.classList.toggle("dark");
+
+          // Update localStorage
+          if (document.documentElement.classList.contains("dark")) {
+            localStorage.theme = "dark";
+          } else {
+            localStorage.theme = "light";
+          }
+          // Re-render icons to reflect theme change
+          feather.replace();
+        });
+      });
+    </script>
+  </body>
+</html>

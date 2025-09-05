@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizers | Qiskit Fall Festival @ Yonsei 2025</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+      /* Use Inter as the default font */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .organizer-card {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .organizer-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .organizer-details {
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+      .organizer-details.expanded {
+        display: block;
+        max-height: 500px; /* Adjust as needed */
+      }
+    </style>
+    <script>
+      // Set theme on initial load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header & Navigation Bar -->
+    <header
+      id="header"
+      class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm dark:bg-gray-800/80"
+    >
+      <nav
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <!-- Site Title -->
+        <div class="flex-1">
+          <a
+            href="../../index-ko.html"
+            class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]"
+          >
+            Qiskit Fall Fest @ Yonsei
+          </a>
+        </div>
+
+        <!-- Center Logo -->
+        <div class="flex justify-center">
+          <a href="../../index-ko.html">
+            <img
+              src="../../assets/image/qiya-black.png"
+              alt="QIYA Logo"
+              class="h-20 dark:invert"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <div style="display: none" class="text-gray-500 dark:text-gray-400">
+              QIYA Logo
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex flex-1 justify-end items-center space-x-8">
+          <a
+            href="../../pages/ko/about-ko.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >소개</a
+          >
+          <a
+            href="../../pages/ko/organizers-ko.html"
+            class="font-extrabold text-[#17106A] dark:text-white transition duration-300"
+            >주최측</a
+          >
+          <a
+            href="../../pages/ko/timetable-ko.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >시간표</a
+          >
+          <a
+            href="../../pages/ko/archive-ko.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >기록</a
+          >
+          <a
+            href="https://docs.google.com/forms/u/0/"
+            class="bg-[#17106A] text-white px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md whitespace-nowrap"
+            >지금 등록</a
+          >
+          <div class="text-sm">
+            <a
+              href="../en/organizers.html"
+              class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+              >EN</a
+            >
+            <span class="mx-1">|</span>
+            <span class="font-bold text-[#17106A] dark:text-white">KR</span>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex-1 flex justify-end">
+          <button id="mobile-menu-button">
+            <i
+              data-feather="menu"
+              class="h-6 w-6 text-gray-700 dark:text-gray-300"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+        <a
+          href="../../pages/ko/about-ko.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >소개</a
+        >
+        <a
+          href="../../pages/ko/organizers-ko.html"
+          class="font-extrabold text-[#17106A] dark:text-white py-2"
+          >주최측</a
+        >
+        <a
+          href="../../pages/ko/timetable-ko.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >시간표</a
+        >
+        <a
+          href="../../pages/ko/archive-ko.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >기록</a
+        >
+        <a
+          href="https://docs.google.com/forms/u/0/"
+          class="block bg-[#17106A] text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md"
+          >지금 등록</a
+        >
+        <div class="text-sm text-center pt-2">
+          <a
+            href="../en/organizers.html"
+            class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+            >EN</a
+          >
+          <span class="mx-1">|</span>
+          <span class="font-bold text-[#17106A] dark:text-white">KR</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Organizers Section -->
+      <section id="organizers" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">주최측</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+
+          <!-- Justin J.H. Kim -->
+          <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-12" data-name="Justin J.H. Kim" data-title="리드 오거나이저" data-affiliation="연세대학교" data-contact="justin.kim@example.com" data-description="Justin은 Qiskit Fall Festival @ Yonsei의 대표 주최자입니다. 그는 양자 교육과 커뮤니티 구축에 열정적인 지지자입니다. 그는 양자 컴퓨팅 연구 및 커뮤니티 리더십에 대한 폭넓은 경험을 가지고 있습니다.">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Justin J.H. Kim"
+                class="rounded-full shadow-lg w-36 h-36"
+              />
+              <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold">Justin J.H. Kim</h3>
+                <p class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]">리드 오거나이저</p>
+                <p class="text-sm text-gray-800 dark:text-gray-400">Affiliation: Yonsei University</p>
+                <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-2">
+                  Justin은 Qiskit Fall Festival @ Yonsei의 대표 주최자입니다. 그는 양자 교육과 커뮤니티 구축에 열정적인 지지자입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2x2 Grid -->
+          <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+            <!-- Jeongbin Jo -->
+            <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" data-name="조정빈" data-title="공동 오거나이저" data-affiliation="연세대학교" data-contact="jeongbin.jo@example.com" data-description="조정빈은 행사의 기술적인 측면을 담당하는 핵심 주최자입니다. 그는 양자 알고리즘 개발을 전문으로 하며 이전 Qiskit 행사에도 크게 기여했습니다.">
+              <div class="flex items-center gap-6">
+                <img
+                  src="../../assets/image/profiles/Jeongbin-Jo.jpg"
+                  alt="Jeongbin Jo"
+                  class="rounded-full shadow-lg w-24 h-24"
+                />
+                <div>
+                  <h4 class="text-xl font-bold">조정빈</h4>
+                  <p class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]">공동 오거나이저</p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">전공: Physics</p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">연락처: jeongbin033@yonsei.ac.kr</p>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1">
+                    Qiskit Advocates이자, 행사 사이트 및 자료를 관리하고 있다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hyungmin Lim -->
+            <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" data-name="임형민" data-title="공동 오거나이저" data-affiliation="연세대학교" data-contact="hyungmin.lim@example.com" data-description="임형민은 행사의 물류 및 운영을 담당합니다. 그는 모든 행사 활동의 원활한 실행을 보장합니다.">
+              <div class="flex items-center gap-6">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Hyungmin Lim"
+                  class="rounded-full shadow-lg w-24 h-24"
+                />
+                <div>
+                  <h4 class="text-xl font-bold">임형민</h4>
+                  <p class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]">공동 오거나이저</p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">Affiliation: Yonsei University</p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1">
+                    임형민은 행사의 물류 및 운영을 담당합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Haesung Kim -->
+            <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" data-name="김해성" data-title="공동 오거나이저" data-affiliation="연세대학교" data-contact="haesung.kim@example.com" data-description="김해성은 축제의 마케팅 및 홍보를 관리합니다. 그는 커뮤니티에 다가가고 높은 참석률을 보장하는 데 핵심적인 역할을 합니다.">
+              <div class="flex items-center gap-6">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Haesung Kim"
+                  class="rounded-full shadow-lg w-24 h-24"
+                />
+                <div>
+                  <h4 class="text-xl font-bold">김해성</h4>
+                  <p class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]">공동 오거나이저</p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">Affiliation: Yonsei University</p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1">
+                    김해성은 축제의 마케팅 및 홍보를 관리합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kangmin Ha -->
+            <div class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <div class="flex items-center gap-6">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Kangmin Ha"
+                  class="rounded-full shadow-lg w-24 h-24"
+                />
+                <div>
+                  <h4 class="text-xl font-bold">하강민</h4>
+                  <p class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]">공동 오거나이저</p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">Affiliation: Yonsei University</p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">Contact: jeongbin033@yonsei.ac.kr</p>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1">
+                    하강민은 챌린지 데이와 워크숍을 담당합니다.
+                  </p>
+                  <div class="organizer-details mt-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      하강민에 대한 상세 설명입니다. 그는 실습 양자 프로그래밍 챌린지를 설계하고 감독합니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white dark:bg-black/50 py-10">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center items-center space-x-6 mb-4">
+          <a
+            href="https://www.instagram.com/qiya_yonsei/"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="instagram"></i
+          ></a>
+          <a
+            href="https://github.com/QIYA-yonsei"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="github"></i
+          ></a>
+          <a
+            ref="https://www.youtube.com/@qiyayonsei"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="youtube"></i
+          ></a>
+        </div>
+        <p>
+          &copy; Quantum Informatics at Yonsei Academy. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Wait for the DOM to be fully loaded before running scripts
+      window.addEventListener("DOMContentLoaded", (event) => {
+        // --- Feather Icons Initialization ---
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+        mobileMenu.addEventListener("click", (e) => {
+          if (e.target.tagName === "A") {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+
+        // --- Dark Mode Toggle ---
+        const themeToggle = document.getElementById("theme-toggle");
+        themeToggle.addEventListener("click", () => {
+          // Toggle dark class on html element
+          document.documentElement.classList.toggle("dark");
+
+          // Update localStorage
+          if (document.documentElement.classList.contains("dark")) {
+            localStorage.theme = "dark";
+          } else {
+            localStorage.theme = "light";
+          }
+          // Re-render icons to reflect theme change
+          feather.replace();
+        });
+      });
+    </script>
+    </body>
+</html>

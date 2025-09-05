@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timetable | Qiskit Fall Festival @ Yonsei 2025</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+      /* Use Inter as the default font */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+    <script>
+      // Set theme on initial load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header & Navigation Bar -->
+    <header
+      id="header"
+      class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm dark:bg-gray-800/80"
+    >
+      <nav
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <!-- Site Title -->
+        <div class="flex-1">
+          <a
+            href="../../index.html"
+            class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]"
+          >
+            Qiskit Fall Fest @ Yonsei
+          </a>
+        </div>
+
+        <!-- Center Logo -->
+        <div class="flex justify-center">
+          <a href="../../index.html">
+            <img
+              src="../../assets/image/qiya-black.png"
+              alt="QIYA Logo"
+              class="h-20 dark:invert"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <div style="display: none" class="text-gray-500 dark:text-gray-400">
+              QIYA Logo
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex flex-1 justify-end items-center space-x-8">
+          <a
+            href="../../pages/en/about.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >About</a
+          >
+          <a
+            href="../../pages/en/timetable.html"
+            class="font-extrabold text-[#17106A] dark:text-white transition duration-300"
+            >Timetable</a
+          >
+          <a
+            href="../../pages/en/archive.html"
+            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+            >Archives</a
+          >
+          <a
+            href="https://docs.google.com/forms/u/0/"
+            class="bg-[#17106A] text-white px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md whitespace-nowrap"
+            >Register Now</a
+          >
+          <div class="text-sm">
+            <span class="font-bold text-[#17106A] dark:text-white">EN</span>
+            <span class="mx-1">|</span>
+            <a
+              href="../../pages/ko/timetable-ko.html"
+              class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+              >KR</a
+            >
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex-1 flex justify-end">
+          <button id="mobile-menu-button">
+            <i
+              data-feather="menu"
+              class="h-6 w-6 text-gray-700 dark:text-gray-300"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+        <a
+          href="../../pages/en/about.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >About</a
+        >
+        <a
+          href="../../pages/en/timetable.html"
+          class="font-extrabold text-[#17106A] dark:text-white py-2"
+          >Timetable</a
+        >
+        <a
+          href="../../pages/en/archive.html"
+          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+          >Archives</a
+        >
+        <a
+          href="https://docs.google.com/forms/u/0/"
+          class="block bg-[#17106A] text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md"
+          >Register Now</a
+        >
+        <div class="text-sm text-center pt-2">
+          <span class="font-bold text-[#17106A] dark:text-white">EN</span>
+          <span class="mx-1">|</span>
+          <a
+            href="../../pages/ko/timetable-ko.html"
+            class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+            >KR</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Timetable Section -->
+      <section id="timetable" class="py-20 bg-slate-50 dark:bg-gray-950">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">Timetable</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+          <div
+            class="max-w-3xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            <!-- Day 1 -->
+            <div
+              class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-indigo-500 dark:border-indigo-400"
+            >
+              <h3 class="text-xl font-bold mb-1">Day 1: Talk Sessions</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                October 31, 2025
+              </p>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>
+                  <span class="font-semibold">14:00 - 14:40</span> - Session 1 :
+                  Hyungmin Lim
+                </li>
+                <li>
+                  <span class="font-semibold">14:50 - 15:30:</span> - Session 2
+                  : TBD
+                </li>
+                <li>
+                  <span class="font-semibold">15:40 - 16:20</span> - Session 3 :
+                  TBD
+                </li>
+                <li>
+                  <span class="font-semibold">16:30 - 17:10</span> - Session 4 :
+                  TBD
+                </li>
+              </ul>
+            </div>
+            <!-- Day 2 -->
+            <div
+              class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-purple-500 dark:border-purple-400"
+            >
+              <h3 class="text-xl font-bold mb-1">Day 2: Challenge Day</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                November 1, 2025
+              </p>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li>
+                  <span class="font-semibold">13:00 - 13:40</span> - Intro to
+                  Linear Algebra : Haesung Kim
+                </li>
+                <li>
+                  <span class="font-semibold">13:50 - 14:30</span> - Basics of
+                  Quantum Informatics : Jeongbin Jo
+                </li>
+                <li>
+                  <span class="font-semibold">14:40 - 15:20</span> - Getting
+                  Started with Qiskit : Justin J.H. Kim
+                </li>
+                <li>
+                  <span class="font-semibold">15:30 - 17:30</span> - Challenge
+                </li>
+                <li>
+                  <span class="font-semibold">17:30 - 18:30</span> - Solutions
+                  and Award : Kangmin Ha
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white dark:bg-black/50 py-10">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center items-center space-x-6 mb-4">
+          <a
+            href="https://www.instagram.com/qiya_yonsei/"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="instagram"></i
+          ></a>
+          <a
+            href="https://github.com/QIYA-yonsei"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="github"></i
+          ></a>
+          <a
+            ref="https://www.youtube.com/@qiyayonsei"
+            class="text-gray-400 hover:text-white"
+            ><i data-feather="youtube"></i
+          ></a>
+        </div>
+        <p>
+          &copy; 2025 Quantum Informatics at Yonsei Academy. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Wait for the DOM to be fully loaded before running scripts
+      window.addEventListener("DOMContentLoaded", (event) => {
+        // --- Feather Icons Initialization ---
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+        mobileMenu.addEventListener("click", (e) => {
+          if (e.target.tagName === "A") {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+
+        // --- Dark Mode Toggle ---
+        const themeToggle = document.getElementById("theme-toggle");
+        themeToggle.addEventListener("click", () => {
+          // Toggle dark class on html element
+          document.documentElement.classList.toggle("dark");
+
+          // Update localStorage
+          if (document.documentElement.classList.contains("dark")) {
+            localStorage.theme = "dark";
+          } else {
+            localStorage.theme = "light";
+          }
+          // Re-render icons to reflect theme change
+          feather.replace();
+        });
+      });
+    </script>
+  </body>
+</html>
