@@ -356,7 +356,7 @@
       };
 
       // Load the header and then initialize its scripts
-      loadComponent("header.html", "header-placeholder", () => {
+      loadComponent("header-ko.html", "header-placeholder", () => {
         // --- SCRIPT TO BOLD THE ACTIVE MENU ITEM ---
         const currentPage =
           window.location.pathname.split("/").pop() || "home.html";
@@ -392,7 +392,7 @@
       });
 
       // Load the footer and then initialize its scripts
-      loadComponent("footer.html", "footer-placeholder", () => {
+      loadComponent("footer-ko.html", "footer-placeholder", () => {
         // --- SCRIPT FOR ICONS AND DARK MODE ---
         feather.replace();
         const themeToggle = document.getElementById("theme-toggle");
