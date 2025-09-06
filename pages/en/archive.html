@@ -41,116 +41,8 @@
   <body
     class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
   >
-    <!-- Header & Navigation Bar -->
-    <header
-      id="header"
-      class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm dark:bg-gray-800/80"
-    >
-      <nav
-        class="container mx-auto px-6 py-3 flex justify-between items-center"
-      >
-        <!-- Site Title -->
-        <div class="flex-1">
-          <a
-            href="../../index.html"
-            class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]"
-          >
-            Qiskit Fall Fest @ Yonsei
-          </a>
-        </div>
-
-        <!-- Center Logo -->
-        <div class="flex justify-center">
-          <a href="../../index.html">
-            <img
-              src="../../assets/image/qiya-black.png"
-              alt="QIYA Logo"
-              class="h-20 dark:invert"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-            />
-            <div style="display: none" class="text-gray-500 dark:text-gray-400">
-              QIYA Logo
-            </div>
-          </a>
-        </div>
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex flex-1 justify-end items-center space-x-8">
-          <a
-            href="../../pages/en/about.html"
-            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
-            >About</a
-          >
-          <a
-            href="../../pages/en/timetable.html"
-            class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
-            >Timetable</a
-          >
-          <a
-            href="../../pages/en/archive.html"
-            class="font-extrabold text-[#17106A] dark:text-white transition duration-300"
-            >Archives</a
-          >
-          <a
-            href="https://docs.google.com/forms/u/0/"
-            class="bg-[#17106A] text-white px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md whitespace-nowrap"
-            >Register Now</a
-          >
-          <div class="text-sm">
-            <span class="font-bold text-[#17106A] dark:text-white">EN</span>
-            <span class="mx-1">|</span>
-            <a
-              href="../../pages/ko/archive-ko.html"
-              class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
-              >KR</a
-            >
-          </div>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden flex-1 flex justify-end">
-          <button id="mobile-menu-button">
-            <i
-              data-feather="menu"
-              class="h-6 w-6 text-gray-700 dark:text-gray-300"
-            ></i>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-        <a
-          href="../../pages/en/about.html"
-          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
-          >About</a
-        >
-        <a
-          href="../../pages/en/timetable.html"
-          class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
-          >Timetable</a
-        >
-        <a
-          href="../../pages/en/archive.html"
-          class="font-extrabold text-[#17106A] dark:text-white py-2"
-          >Archives</a
-        >
-        <a
-          href="https://docs.google.com/forms/u/0/"
-          class="block bg-[#17106A] text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md"
-          >Register Now</a
-        >
-        <div class="text-sm text-center pt-2">
-          <span class="font-bold text-[#17106A] dark:text-white">EN</span>
-          <span class="mx-1">|</span>
-          <a
-            href="../../pages/ko/archive-ko.html"
-            class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
-            >KR</a
-          >
-        </div>
-      </div>
-    </header>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
 
     <main>
       <!-- Archive Section -->
@@ -183,70 +75,78 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white dark:bg-black/50 py-10">
-      <div class="container mx-auto px-6 text-center">
-        <div class="flex justify-center items-center space-x-6 mb-4">
-          <a
-            href="https://www.instagram.com/qiya_yonsei/"
-            class="text-gray-400 hover:text-white"
-            ><i data-feather="instagram"></i
-          ></a>
-          <a
-            href="https://github.com/QIYA-yonsei"
-            class="text-gray-400 hover:text-white"
-            ><i data-feather="github"></i
-          ></a>
-          <a
-            ref="https://www.youtube.com/@qiyayonsei"
-            class="text-gray-400 hover:text-white"
-            ><i data-feather="youtube"></i
-          ></a>
-        </div>
-        <p>
-          &copy; 2025 Quantum Informatics at Yonsei Academy. All Rights
-          Reserved.
-        </p>
-      </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script>
-      // Wait for the DOM to be fully loaded before running scripts
-      window.addEventListener("DOMContentLoaded", (event) => {
-        // --- Feather Icons Initialization ---
-        feather.replace();
+      // --- DYNAMICALLY LOAD HEADER AND FOOTER ---
 
-        // --- Mobile Menu Toggle ---
+      const loadComponent = (componentPath, placeholderId, callback) => {
+        fetch(componentPath)
+          .then((response) => {
+            if (!response.ok)
+              throw new Error(`Could not load ${componentPath}`);
+            return response.text();
+          })
+          .then((data) => {
+            const placeholder = document.getElementById(placeholderId);
+            if (placeholder) placeholder.innerHTML = data;
+            if (callback) callback();
+          })
+          .catch((error) => console.error(`Error loading component:`, error));
+      };
+
+      // Load the header and then initialize its scripts
+      loadComponent("header.html", "header-placeholder", () => {
+        // --- SCRIPT TO BOLD THE ACTIVE MENU ITEM ---
+        const currentPage =
+          window.location.pathname.split("/").pop() || "home.html";
+
+        if (currentPage !== "home.html") {
+          const navLinks = document.querySelectorAll(
+            "#main-nav a, #mobile-menu a"
+          );
+          navLinks.forEach((link) => {
+            const linkPage = (link.getAttribute("href") || "").split("/").pop();
+            if (linkPage === currentPage) {
+              link.classList.add(
+                "font-bold",
+                "text-[#17106A]",
+                "dark:text-white"
+              );
+              link.classList.remove("text-gray-600", "dark:text-gray-300");
+            }
+          });
+        }
+
+        // --- SCRIPT FOR MOBILE MENU TOGGLE ---
         const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
-        mobileMenuButton.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-        mobileMenu.addEventListener("click", (e) => {
-          if (e.target.tagName === "A") {
-            mobileMenu.classList.add("hidden");
-          }
-        });
-        window.addEventListener("resize", () => {
-          if (window.innerWidth >= 768) {
-            mobileMenu.classList.add("hidden");
-          }
-        });
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener("click", () =>
+            mobileMenu.classList.toggle("hidden")
+          );
+          mobileMenu.addEventListener("click", (e) => {
+            if (e.target.tagName === "A") mobileMenu.classList.add("hidden");
+          });
+        }
+      });
 
-        // --- Dark Mode Toggle ---
+      // Load the footer and then initialize its scripts
+      loadComponent("footer.html", "footer-placeholder", () => {
+        // --- SCRIPT FOR ICONS AND DARK MODE ---
+        feather.replace();
         const themeToggle = document.getElementById("theme-toggle");
-        themeToggle.addEventListener("click", () => {
-          // Toggle dark class on html element
-          document.documentElement.classList.toggle("dark");
-
-          // Update localStorage
-          if (document.documentElement.classList.contains("dark")) {
-            localStorage.theme = "dark";
-          } else {
-            localStorage.theme = "light";
-          }
-          // Re-render icons to reflect theme change
-          feather.replace();
-        });
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            localStorage.theme = document.documentElement.classList.contains(
+              "dark"
+            )
+              ? "dark"
+              : "light";
+            feather.replace();
+          });
+        }
       });
     </script>
   </body>

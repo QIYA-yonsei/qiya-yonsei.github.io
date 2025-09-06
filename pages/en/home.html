@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Timetable | Qiskit Fall Festival @ Yonsei 2025</title>
+    <title>Qiskit Fall Festival @ Yonsei 2025</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,17 +14,35 @@
       rel="stylesheet"
     />
 
-    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-      /* Use Inter as the default font */
       body {
         font-family: "Inter", sans-serif;
       }
+      .hero-background {
+        background-image: url("../../assets/image/splash.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .hero-background::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
     </style>
     <script>
-      // Set theme on initial load
       if (
         localStorage.theme === "dark" ||
         (!("theme" in localStorage) &&
@@ -45,6 +61,58 @@
     <div id="header-placeholder"></div>
 
     <main>
+      <!-- Hero Section -->
+      <section class="hero-background text-white py-24 sm:py-32">
+        <div class="container mx-auto px-6 text-center hero-content">
+          <h1
+            class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tight"
+          >
+            Qiskit Fall Festival @ Yonsei 2025
+          </h1>
+          <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            October 31 - November 1, 2025 | Yonsei University Sinchon Campus
+          </p>
+          <a
+            href="#register"
+            class="bg-white text-[#17106A] font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-xl text-lg"
+          >
+            Register Now
+          </a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <div
+            class="max-w-4xl mx-auto text-center text-gray-600 dark:text-gray-300 leading-relaxed grid md:grid-cols-2 gap-12 items-center"
+          >
+            <!-- Light mode image -->
+            <img
+              src="../../assets/image/Badge.png"
+              alt="Qiskit Fall Festival Logo"
+              class="rounded-lg w-full h-auto dark:hidden"
+            />
+            <!-- Dark mode image -->
+            <img
+              src="../../assets/image/Badge_Dark.png"
+              alt="Qiskit Fall Festival Logo"
+              class="rounded-lg w-full h-auto hidden dark:block"
+            />
+            <p>
+              The Qiskit Fall Festival @ Yonsei is an annual event at Yonsei
+              University hosted by QIYA(Quantum Informatics at Yonsei Academy).
+              Our mission is to bring students, researchers, and industry
+              professionals together . Whether you're an expert or just starting
+              your quantum journey, you'll find inspiring talks, hands-on
+              workshops, and invaluable networking opportunities. Join us as we
+              dive into the latest advancements in quantum algorithms, hardware,
+              and software.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- Timetable Section -->
       <section id="timetable" class="py-20 bg-slate-50 dark:bg-gray-950">
         <div class="container mx-auto px-6">
@@ -113,6 +181,73 @@
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Register Section -->
+      <section id="register" class="py-20 bg-indigo-50 dark:bg-indigo-900/20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-4">Register Now! It's Free!</h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            Register now for free to learn about quantum computing from
+            researchers and professionals in the idustry. Also you can actually
+            try out quantum programming with Qiskit on the challenge day!
+          </p>
+          <a
+            href="#"
+            class="bg-[#17106A] text-white font-bold px-8 py-4 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 transform hover:scale-105 shadow-xl text-lg"
+          >
+            Register Now
+          </a>
+        </div>
+      </section>
+
+      <!-- Archive Section -->
+      <section id="archive" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">Archives</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+          <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
+            <a
+              href="https://qiya-yonsei.github.io/qff-2024/"
+              class="bg-gray-100 text-gray-700 px-5 py-2 rounded-full hover:bg-indigo-100 hover:text-indigo-700 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-indigo-500/50 dark:hover:text-white transition duration-300"
+              >Qiskit Fall Festival @ Yonsei 2024</a
+            >
+          </div>
+          <!-- Centered & Responsive Video Wrapper -->
+          <div class="max-w-3xl mx-auto mt-12 aspect-video">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/videoseries?si=qncdX1fNawoA0NQn&amp;list=PLLXS3g7gThWJEPHs4N1k5NVgH_dguYWuX"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Organizers Section -->
+      <section id="organizers" class="py-20 bg-slate-50 dark:bg-gray-950">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-4">Meet the Organizers</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            This event is organized by members of QIYA (Quantum Informatics at
+            Yonsei), a quantum computing student club at Yonsei University.
+          </p>
+          <a
+            href="organizers.html"
+            class="bg-[#17106A] text-white font-bold px-8 py-4 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 transform hover:scale-105 shadow-xl text-lg"
+          >
+            See the Team
+          </a>
         </div>
       </section>
     </main>

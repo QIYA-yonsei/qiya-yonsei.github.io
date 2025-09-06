@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>시간표 | Qiskit Fall Festival @ Yonsei 2025</title>
+    <title>Qiskit Fall Fest @ Yonsei 2025</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,17 +14,35 @@
       rel="stylesheet"
     />
 
-    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-      /* Use Inter as the default font */
       body {
         font-family: "Inter", sans-serif;
       }
+      .hero-background {
+        background-image: url("../../assets/image/splash.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .hero-background::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
     </style>
     <script>
-      // Set theme on initial load
       if (
         localStorage.theme === "dark" ||
         (!("theme" in localStorage) &&
@@ -45,6 +61,57 @@
     <div id="header-placeholder"></div>
 
     <main>
+      <!-- Hero Section -->
+      <section class="hero-background text-white py-24 sm:py-32">
+        <div class="container mx-auto px-6 text-center hero-content">
+          <h1
+            class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tight"
+          >
+            Qiskit Fall Fest @ Yonsei 2025
+          </h1>
+          <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            2025년 10월 31일 - 11월 1일 | 연세대학교 신촌캠퍼스
+          </p>
+          <a
+            href="https://docs.google.com/forms/u/0/"
+            class="bg-white text-[#17106A] font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-xl text-lg"
+          >
+            지금 등록하기
+          </a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <div
+            class="max-w-4xl mx-auto text-center text-gray-600 dark:text-gray-300 leading-relaxed grid md:grid-cols-2 gap-12 items-center"
+          >
+            <!-- Light mode image -->
+            <img
+              src="../../assets/image/Badge.png"
+              alt="Qiskit Fall Festival Logo"
+              class="rounded-lg w-full h-auto dark:hidden"
+            />
+            <!-- Dark mode image -->
+            <img
+              src="../../assets/image/Badge_Dark.png"
+              alt="Qiskit Fall Festival Logo"
+              class="rounded-lg w-full h-auto hidden dark:block"
+            />
+            <p>
+              Qiskit Fall Fest @ Yonsei 2025는 연세대학교 QIYA(Quantum
+              Informatics at Yonsei Academy)가 주최하고 IBM이 후원하는
+              행사입니다. 퀀텀 컴퓨팅을 처음 접하는 초보자부터 전문가까지 모두를
+              위한 자리입니다. Qiskit Fall Fest @ Yonsei 2025에서는 최고의
+              연구자와 업계 전문가들한테서 직접 듣는 강연과 실습 챌린지 그리고
+              다양한 네트워킹 기회를 만날 수 있습니다. 퀀텀 컴퓨팅의 미래를 함께
+              만들어갈 축제에 여러분을 초대합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- Timetable Section -->
       <section id="timetable" class="py-20 bg-slate-50 dark:bg-gray-950">
         <div class="container mx-auto px-6">
@@ -113,6 +180,73 @@
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Register Section -->
+      <section id="register" class="py-20 bg-indigo-50 dark:bg-indigo-900/20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-4">지금 등록하세요!</h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            지금 등록하여 양자 컴퓨팅에 대해 배워보세요! 또한 challenge day에는
+            Qiskit으로 여러분들이 직접 양자 컴퓨터를 프로그래밍 해 볼 수
+            있습니다!
+          </p>
+          <a
+            href="https://docs.google.com/forms/u/0/"
+            class="bg-[#17106A] text-white font-bold px-8 py-4 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 transform hover:scale-105 shadow-xl text-lg"
+          >
+            지금 등록하기
+          </a>
+        </div>
+      </section>
+
+      <!-- Archive Section -->
+      <section id="archive" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">Archives</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+          <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
+            <a
+              href="https://qiya-yonsei.github.io/qff-2024/"
+              class="bg-gray-100 text-gray-700 px-5 py-2 rounded-full hover:bg-indigo-100 hover:text-indigo-700 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-indigo-500/50 dark:hover:text-white transition duration-300"
+              >Qiskit Fall Fest @ Yonsei 2024</a
+            >
+          </div>
+          <!-- Centered & Responsive Video Wrapper -->
+          <div class="max-w-3xl mx-auto mt-12 aspect-video">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/videoseries?si=qncdX1fNawoA0NQn&amp;list=PLLXS3g7gThWJEPHs4N1k5NVgH_dguYWuX"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Organizers Section -->
+      <section id="organizers" class="py-20 bg-slate-50 dark:bg-gray-950">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-4">Meet the Organizers</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            이 행사는 연세대학교 양자컴퓨터 학술 동아리 QIYA(Quantum Informatics
+            at Yonsei Academy)의 회원들이 주최하는 행사입니다.
+          </p>
+          <a
+            href="../en/organizers.html"
+            class="bg-[#17106A] text-white font-bold px-8 py-4 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 transform hover:scale-105 shadow-xl text-lg"
+          >
+            팀원 소개
+          </a>
         </div>
       </section>
     </main>

@@ -1,0 +1,110 @@
+<header
+  id="header"
+  class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm dark:bg-gray-800/80"
+>
+  <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+    <!-- Site Title -->
+    <div class="flex-1">
+      <a
+        href="home-ko.html"
+        class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]"
+      >
+        Qiskit Fall Fest @ Yonsei
+      </a>
+    </div>
+
+    <!-- Center Logo -->
+    <div class="flex justify-center">
+      <a href="home-ko.html">
+        <img
+          src="../../assets/image/qiya-black.png"
+          alt="QIYA Logo"
+          class="h-20 dark:invert"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <div style="display: none" class="text-gray-500 dark:text-gray-400">
+          QIYA Logo
+        </div>
+      </a>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div
+      id="main-nav"
+      class="hidden md:flex flex-1 justify-end items-center space-x-8"
+    >
+      <a
+        href="about-ko.html"
+        class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+        >About</a
+      >
+      <a
+        href="timetable-ko.html"
+        class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+        >Timetable</a
+      >
+      <a
+        href="archive-ko.html"
+        class="text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] transition duration-300"
+        >Archives</a
+      >
+      <a
+        href="https://docs.google.com/forms/u/0/"
+        class="bg-[#17106A] text-white px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md whitespace-nowrap"
+        >등록하기</a
+      >
+      <div class="text-sm">
+        <a
+          href="../en/home.html"
+          class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+          >EN</a
+        >
+        <span class="mx-1">|</span>
+        <span class="font-bold text-[#17106A] dark:text-white">KR</span>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden flex-1 flex justify-end">
+      <button id="mobile-menu-button">
+        <i
+          data-feather="menu"
+          class="h-6 w-6 text-gray-700 dark:text-gray-300"
+        ></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+    <a
+      href="about-ko.html"
+      class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+      >About</a
+    >
+    <a
+      href="timetable-ko.html"
+      class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+      >Timetable</a
+    >
+    <a
+      href="archive-ko.html"
+      class="block text-gray-600 hover:text-[#17106A] dark:text-gray-300 dark:hover:text-[#8A84E2] py-2"
+      >Archives</a
+    >
+    <a
+      href="https://docs.google.com/forms/u/0/"
+      class="block bg-[#17106A] text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-[#110c58] dark:bg-[#5A54D4] dark:hover:bg-[#4944b1] transition duration-300 shadow-md"
+      >등록하기</a
+    >
+    <div class="text-sm text-center pt-2">
+      <span class="mx-1">|</span>
+      <a
+        href="../en/home.html"
+        class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
+        >EN</a
+      >
+      <span class="font-bold text-[#17106A] dark:text-white">KR</span>
+    </div>
+  </div>
+</header>
