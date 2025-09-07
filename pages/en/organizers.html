@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizers | Qiskit Fall Festival @ Yonsei 2025</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+      /* Use Inter as the default font */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .organizer-card {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .organizer-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .organizer-details {
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+      .organizer-details.expanded {
+        display: block;
+        max-height: 500px; /* Adjust as needed */
+      }
+    </style>
+    <script>
+      // Set theme on initial load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+      <!-- Organizers Section -->
+      <section id="organizers" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">Organizers</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+
+          <!-- Justin J.H. Kim -->
+          <div
+            class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-12"
+            data-name="Justin J.H. Kim"
+          >
+            <div class="flex flex-col md:flex-row items-center gap-8">
+              <img
+                src="../../assets/image/profiles/jhk.JPG"
+                alt="Justin J.H. Kim"
+                class="rounded-full shadow-lg w-36 h-35"
+              />
+              <div class="text-center md:text-left">
+                <div class="flex items-center gap-3">
+                  <h3 class="text-2xl font-bold">Justin J.H. Kim</h3>
+                  <a
+                    href="https://www.linkedin.com/in/justin-kim-b82447312/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                  >
+                    <i data-feather="linkedin" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="https://github.com/kimmmjh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                  >
+                    <i data-feather="github" class="w-5 h-5"></i>
+                  </a>
+                </div>
+                <p class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]">
+                  Lead Organizer
+                </p>
+                <p class="text-sm text-gray-800 dark:text-gray-400">
+                  Affiliation: School of Integrated Technology
+                </p>
+                <p class="text-sm text-gray-800 dark:text-gray-400">
+                  Contact: j.hwankim@yonsei.ac.kr
+                </p>
+                <p
+                  class="text-gray-600 dark:text-gray-300 leading-relaxed mt-2"
+                >
+                  Justin is the lead organizer of the Qiskit Fall Festival @
+                  Yonsei 2025. He is a Qiskit Advocate and worked on the event
+                  page and led the team.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2x2 Grid -->
+          <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+            <!-- Jeongbin Jo -->
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Jeongbin Jo"
+            >
+              <div class="flex items-center gap-6">
+                <img
+                  src="../../assets/image/profiles/Jeongbin-Jo.jpg"
+                  alt="Jeongbin Jo"
+                  class="rounded-full shadow-lg w-24 h-23"
+                />
+                <div>
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Jeongbin Jo</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Department of Physics
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: jeongbin033@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Jeongbin Is a Qiskit Advocate, and managed the event website
+                    and materials.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hyungmin Lim -->
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Hyungmin Lim"
+            >
+              <div class="flex items-center gap-6">
+                <img
+                  src="../../assets/image/profiles/Hyungmin Lim.jpeg"
+                  alt="Hyungmin Lim"
+                  class="rounded-full shadow-lg w-24 h-23"
+                />
+                <div>
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Hyungmin Lim</h4>
+                    <a
+                      href="https://www.linkedin.com/in/hyungmin-lim"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: School of Electrical and Electronic Engineering
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: him030107@gmail.com
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Hyungmin is responsible for the event's logistics and
+                    operations and speaker invitations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Haesung Kim -->
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Haesung Kim"
+            >
+              <div class="flex items-center gap-6">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Haesung Kim"
+                  class="rounded-full shadow-lg w-24 h-23"
+                />
+                <div>
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Haesung Kim</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Department of Physics
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: jeongbin033@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Haesung manages the marketing and promotion of the festival.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kangmin Ha -->
+            <div
+              class="organizer-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              data-name="Kangmin Ha"
+            >
+              <div class="flex items-center gap-6">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Kangmin Ha"
+                  class="rounded-full shadow-lg w-24 h-23"
+                />
+                <div>
+                  <div class="flex items-center gap-3">
+                    <h4 class="text-xl font-bold">Kangmin Ha</h4>
+                    <a
+                      href="YOUR_LINKEDIN_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a
+                      href="YOUR_GITHUB_URL_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-500 hover:text-[#17106A] dark:text-gray-400 dark:hover:text-white"
+                    >
+                      <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                  </div>
+                  <p
+                    class="text-md font-bold text-[#17106A] dark:text-[#8A84E2]"
+                  >
+                    Co-Organizer
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Affiliation: Nano Science and Engineering
+                  </p>
+                  <p class="text-sm text-gray-800 dark:text-gray-400">
+                    Contact: riverst03@yonsei.ac.kr
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 leading-relaxed mt-1"
+                  >
+                    Kangmin is in charge of the challenge day and workshops.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // --- DYNAMICALLY LOAD HEADER AND FOOTER ---
+
+      const loadComponent = (componentPath, placeholderId, callback) => {
+        fetch(componentPath)
+          .then((response) => {
+            if (!response.ok)
+              throw new Error(`Could not load ${componentPath}`);
+            return response.text();
+          })
+          .then((data) => {
+            const placeholder = document.getElementById(placeholderId);
+            if (placeholder) placeholder.innerHTML = data;
+            if (callback) callback();
+          })
+          .catch((error) => console.error(`Error loading component:`, error));
+      };
+
+      // Load the header and then initialize its scripts
+      loadComponent("header.html", "header-placeholder", () => {
+        // --- SCRIPT TO BOLD THE ACTIVE MENU ITEM ---
+        const currentPage =
+          window.location.pathname.split("/").pop() || "home.html";
+
+        if (currentPage !== "home.html") {
+          const navLinks = document.querySelectorAll(
+            "#main-nav a, #mobile-menu a"
+          );
+          navLinks.forEach((link) => {
+            const linkPage = (link.getAttribute("href") || "").split("/").pop();
+            if (linkPage === currentPage) {
+              link.classList.add(
+                "font-bold",
+                "text-[#17106A]",
+                "dark:text-white"
+              );
+              link.classList.remove("text-gray-600", "dark:text-gray-300");
+            }
+          });
+        }
+
+        // --- SCRIPT FOR MOBILE MENU TOGGLE ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener("click", () =>
+            mobileMenu.classList.toggle("hidden")
+          );
+          mobileMenu.addEventListener("click", (e) => {
+            if (e.target.tagName === "A") mobileMenu.classList.add("hidden");
+          });
+        }
+      });
+
+      // Load the footer and then initialize its scripts
+      loadComponent("footer.html", "footer-placeholder", () => {
+        // --- SCRIPT FOR ICONS AND DARK MODE ---
+        feather.replace();
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            localStorage.theme = document.documentElement.classList.contains(
+              "dark"
+            )
+              ? "dark"
+              : "light";
+            feather.replace();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
