@@ -9,7 +9,11 @@
         href="home-ko.html"
         class="text-lg font-bold text-[#17106A] dark:text-[#8A84E2]"
       >
-        Qiskit Fall Fest @ Yonsei
+        <!-- This full title shows on medium screens (md) and larger -->
+        <span class="hidden md:inline">Qiskit Fall Fest @ Yonsei</span>
+
+        <!-- This short title shows ONLY on small (mobile) screens -->
+        <span class="inline md:hidden">QFF @ Yonsei</span>
       </a>
     </div>
 
@@ -98,12 +102,12 @@
       >등록하기</a
     >
     <div class="text-sm text-center pt-2">
-      <span class="mx-1">|</span>
       <a
         href="../en/home.html"
         class="text-gray-400 hover:text-[#17106A] dark:hover:text-white"
         >EN</a
       >
+      <span class="mx-1">|</span>
       <span class="font-bold text-[#17106A] dark:text-white">KR</span>
     </div>
   </div>
