@@ -1,23 +1,86 @@
-<footer class="bg-gray-800 text-white dark:bg-black/50 py-10">
+<footer
+  class="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white py-10"
+>
   <div class="container mx-auto px-6 text-center">
+    <!-- Sponsors & Partners Section -->
+    <div id="sponsors-partners" class="mb-12">
+      <h2
+        class="text-lg font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider mb-8"
+      >
+        Sponsors & Partners
+      </h2>
+      <div
+        class="flex flex-col sm:flex-row justify-center items-center gap-y-10 sm:gap-x-16"
+      >
+        <!-- Partner 1 -->
+        <a
+          href="https://www.ibm.com/quantum"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="../../assets/image/partners/IBM_Quantum_Logo.png"
+            alt="IBM Quantum Logo"
+            class="h-10 w-auto transition-transform duration-300 transform hover:scale-105 dark:invert"
+          />
+        </a>
+
+        <!-- Partner 2 -->
+        <a
+          href="https://iqit.yonsei.ac.kr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="../../assets/image/partners/iqit.png"
+            alt="IQIT Logo"
+            class="h-11 w-auto transition-transform duration-300 transform hover:scale-105 dark:invert"
+          />
+        </a>
+
+        <!-- Partner 3 -->
+        <a
+          href="https://www.yonsei.ac.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="../../assets/image/partners/yonsei.png"
+            alt="Yonsei University Logo"
+            class="h-20 w-auto transition-transform duration-300 transform hover:scale-105 dark:invert"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- Divider Line -->
+    <div class="w-24 h-px bg-gray-300 dark:bg-gray-700 mx-auto mb-8"></div>
+
+    <!-- Social Links and Copyright -->
     <div class="flex justify-center items-center space-x-6 mb-4">
       <a
         href="https://www.instagram.com/qiya_yonsei/"
-        class="text-gray-400 hover:text-white"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         ><i data-feather="instagram"></i
       ></a>
       <a
         href="https://github.com/QIYA-yonsei"
-        class="text-gray-400 hover:text-white"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         ><i data-feather="github"></i
       ></a>
       <a
-        ref="https://www.youtube.com/@qiyayonsei"
-        class="text-gray-400 hover:text-white"
+        href="https://www.youtube.com/@qiyayonsei"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         ><i data-feather="youtube"></i
       ></a>
     </div>
-    <p>
+    <p class="text-sm">
       &copy; 2025 Quantum Informatics at Yonsei Academy. All Rights Reserved.
     </p>
   </div>
