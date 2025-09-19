@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ | Qiskit Fall Fest @ Yonsei 2025</title>
+
+    <!-- Tailwind CSS, Google Fonts, Feather Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        word-break: keep-all; /* For Korean word wrapping */
+      }
+      /* Smooth transition for accordion content */
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+    </style>
+    <script>
+      // Set theme on initial load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main>
+      <section class="py-20">
+        <div class="container mx-auto px-6">
+          <h1 class="text-4xl font-extrabold text-center mb-4">
+            Frequently Asked Questions
+          </h1>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-16"
+          ></div>
+
+          <!-- FAQ Accordion Container -->
+          <div class="max-w-3xl mx-auto space-y-4" id="faq-accordion">
+            <!-- FAQ Item 1 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+              <button
+                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
+              >
+                <span>Is this event free?</span>
+                <i
+                  data-feather="plus"
+                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-answer">
+                <p
+                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
+                >
+                  Yes, this event is completely free for all attendees.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+              <button
+                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
+              >
+                <span
+                  >Can people who are not part of Yonsei University
+                  attend?</span
+                >
+                <i
+                  data-feather="plus"
+                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-answer">
+                <p
+                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
+                >
+                  Yes. This event is public and open to everyone, regardless of
+                  their university or affiliation. We welcome anyone with an
+                  interest in quantum computing.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+              <button
+                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
+              >
+                <span
+                  >Do I have to know some things about quantum computing?</span
+                >
+                <i
+                  data-feather="plus"
+                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-answer">
+                <p
+                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
+                >
+                  No. This event is designed for everyone, from complete
+                  beginners to experienced individuals. The talk sessions on Day
+                  1 covers quantum computing from high level to the science and
+                  math behind it. We also offer introductory sessions on Day 2
+                  to cover the fundamentals of programming quantum computers
+                  using Qiskit.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+              <button
+                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
+              >
+                <span>Do I have to bring my own laptop?</span>
+                <i
+                  data-feather="plus"
+                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-answer">
+                <p
+                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
+                >
+                  Yes. You will need to bring your own laptop to participate in
+                  the hackathon challenge on the second day.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+              <button
+                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
+              >
+                <span>Do I have to know python?</span>
+                <i
+                  data-feather="plus"
+                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-answer">
+                <p
+                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
+                >
+                  Yes, a basic understanding of Python is required for the
+                  hackathon. Our introductory sessions will focus on quantum
+                  concepts and Qiskit, but will not cover the fundamentals of
+                  Python programming.
+                </p>
+              </div>
+            </div>
+
+            <!-- Add more FAQ items here -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- SCRIPT FOR FAQ ACCORDION -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordion = document.getElementById("faq-accordion");
+        if (accordion) {
+          const questions = accordion.querySelectorAll(".faq-question");
+          questions.forEach((question) => {
+            question.addEventListener("click", () => {
+              const answer = question.nextElementSibling;
+              const icon = question.querySelector("i");
+
+              // Toggle answer visibility
+              if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                icon.style.transform = "rotate(0deg)";
+              } else {
+                // Temporarily set a large max-height to get scrollHeight, then set it
+                const wasOpen = answer.style.maxHeight;
+                if (!wasOpen) {
+                  answer.style.maxHeight = "1000px"; // temp value
+                  const scrollHeight = answer.scrollHeight;
+                  answer.style.maxHeight = "0px";
+                  // Force a reflow
+                  answer.offsetHeight;
+                  setTimeout(() => {
+                    answer.style.maxHeight = scrollHeight + "px";
+                    icon.style.transform = "rotate(45deg)";
+                  }, 0);
+                }
+              }
+            });
+          });
+        }
+      });
+    </script>
+
+    <!-- SCRIPT LOADER FOR HEADER & FOOTER -->
+    <script>
+      // --- DYNAMICALLY LOAD HEADER AND FOOTER (FINAL VERSION) ---
+      const loadComponent = (componentPath, placeholderId, callback) => {
+        // Use a root-relative path (starts with '/') to ensure the file is always found
+        fetch(componentPath)
+          .then((response) => {
+            if (!response.ok)
+              throw new Error(`Could not load ${componentPath}`);
+            return response.text();
+          })
+          .then((data) => {
+            const placeholder = document.getElementById(placeholderId);
+            if (placeholder) placeholder.innerHTML = data;
+            if (callback) callback(); // Run scripts after content is loaded
+          })
+          .catch((error) => {
+            console.error(`Error loading component:`, error);
+            const placeholder = document.getElementById(placeholderId);
+            if (placeholder)
+              placeholder.innerHTML = `<p class="text-red-500 text-center">Error: Could not load ${componentPath}. Please check file path and console.</p>`;
+          });
+      };
+      // 1. Load the header and then run its associated scripts
+      loadComponent("header.html", "header-placeholder", () => {
+        // SCRIPT TO APPLY ACTIVE STYLES TO THE CURRENT MENU ITEM
+        const currentPage =
+          window.location.pathname.split("/").pop() || "home.html";
+        if (
+          currentPage !== "home.html" &&
+          currentPage !== "index.html" &&
+          currentPage !== ""
+        ) {
+          const navLinks = document.querySelectorAll(
+            "#main-nav a, #mobile-menu a"
+          );
+          navLinks.forEach((link) => {
+            const linkPage = (link.getAttribute("href") || "").split("/").pop();
+            if (linkPage === currentPage) {
+              if (link.closest("#main-nav")) {
+                link.className =
+                  "font-extrabold text-[#17106A] dark:text-white transition duration-300";
+              } else if (link.closest("#mobile-menu")) {
+                link.className =
+                  "block font-extrabold text-[#17106A] dark:text-white py-2";
+              }
+            }
+          });
+        }
+        // SCRIPT FOR MOBILE MENU TOGGLE
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener("click", () =>
+            mobileMenu.classList.toggle("hidden")
+          );
+          mobileMenu.addEventListener("click", (e) => {
+            if (e.target.tagName === "A") mobileMenu.classList.add("hidden");
+          });
+        }
+      });
+      // 2. Load the footer and then run its associated scripts
+      loadComponent("footer.html", "footer-placeholder", () => {
+        // SCRIPT FOR ICONS AND DARK MODE
+        feather.replace();
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            localStorage.theme = document.documentElement.classList.contains(
+              "dark"
+            )
+              ? "dark"
+              : "light";
+            feather.replace();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
