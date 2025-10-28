@@ -2,29 +2,29 @@
 <html lang="ko" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="../../assets/image/qiya.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ | Qiskit Fall Fest @ Yonsei 2025</title>
+    <title>자료실 | Qiskit Fall Festival @ Yonsei 2025</title>
 
-    <!-- Tailwind CSS, Google Fonts, Feather Icons -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
+      /* Use Inter as the default font */
       body {
         font-family: "Inter", sans-serif;
         word-break: keep-all; /* For Korean word wrapping */
-      }
-      /* Smooth transition for accordion content */
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
       }
     </style>
     <script>
@@ -43,178 +43,92 @@
   <body
     class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
   >
-    <!-- Header Placeholder -->
+    <!-- Header -->
     <div id="header-placeholder"></div>
 
-    <!-- Main Content -->
     <main>
-      <section class="py-20">
+      <!-- Archive Section -->
+      <section id="archive" class="py-20 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6">
-          <h1 class="text-4xl font-extrabold text-center mb-4">
-            자주 묻는 질문
-          </h1>
+          <h2 class="text-3xl font-bold text-center mb-4">자료실</h2>
           <div
-            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-16"
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
           ></div>
-
-          <!-- FAQ Accordion Container -->
-          <div class="max-w-3xl mx-auto space-y-4" id="faq-accordion">
-            <!-- FAQ Item 1 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
-              <button
-                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
-              >
-                <span>이 행사는 무료인가요?</span>
-                <i
-                  data-feather="plus"
-                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
-                ></i>
-              </button>
-              <div class="faq-answer">
-                <p
-                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
-                >
-                  네, 이 행사는 모든 참가자에게 완전히 무료입니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- FAQ Item 2 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
-              <button
-                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
-              >
-                <span>연세대학교 소속이 아니어도 참여할 수 있나요?</span>
-                <i
-                  data-feather="plus"
-                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
-                ></i>
-              </button>
-              <div class="faq-answer">
-                <p
-                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
-                >
-                  네, 가능합니다. 이 행사는 소속과 관계없이 양자 컴퓨팅에 관심
-                  있는 모든 분들을 위해 열려있습니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- FAQ Item 3 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
-              <button
-                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
-              >
-                <span>양자 컴퓨팅에 대한 사전 지식이 필요한가요?</span>
-                <i
-                  data-feather="plus"
-                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
-                ></i>
-              </button>
-              <div class="faq-answer">
-                <p
-                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
-                >
-                  아니요, 필요하지 않습니다. 이 행사는 양자 컴퓨팅을 처음 접하는
-                  입문자부터 숙련자까지 모두를 위해 설계되었습니다. 행사 둘째
-                  날에는 기초 지식을 다루는 입문 세션도 준비되어 있습니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- FAQ Item 4 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
-              <button
-                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
-              >
-                <span>개인 노트북을 가져와야 하나요?</span>
-                <i
-                  data-feather="plus"
-                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
-                ></i>
-              </button>
-              <div class="faq-answer">
-                <p
-                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
-                >
-                  네. 행사 둘째 날에 진행되는 해커톤 챌린지에 참여하려면 개인
-                  노트북이 필요합니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- FAQ Item 5 -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
-              <button
-                class="faq-question flex justify-between items-center w-full text-left text-xl font-bold py-2 text-[#17106A] dark:text-[#8A84E2]"
-              >
-                <span>파이썬을 알아야 하나요?</span>
-                <i
-                  data-feather="plus"
-                  class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
-                ></i>
-              </button>
-              <div class="faq-answer">
-                <p
-                  class="pt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
-                >
-                  네, 해커톤에 참여하기 위해서는 기본적인 파이썬 지식이
-                  필요합니다. 입문 세션에서는 양자 개념과 Qiskit 사용법에 초점을
-                  맞추며, 파이썬 기초 프로그래밍은 다루지 않을 예정입니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- Add more FAQ items here -->
+          <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
+            <a
+              href="https://qiya-yonsei.github.io/qff-2024/"
+              class="bg-gray-100 text-gray-700 px-5 py-2 rounded-full hover:bg-indigo-100 hover:text-indigo-700 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-indigo-500/50 dark:hover:text-white transition duration-300"
+              >Qiskit Fall Festival @ Yonsei 2024</a
+            >
           </div>
+          <div class="max-w-3xl mx-auto mt-12 aspect-video">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/videoseries?si=qncdX1fNawoA0NQn&amp;list=PLLXS3g7gThWJEPHs4N1k5NVgH_dguYWuX"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <!-- Workshop Materials Section -->
+          <!--
+          <div class="max-w-3xl mx-auto mt-16">
+            <h3 class="text-2xl font-bold text-center mb-4">
+              2025 워크샵 자료
+            </h3>
+            <div
+              class="w-20 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-8"
+            ></div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+              <ul class="space-y-4">
+                <li>
+                  <a
+                    href="../../materials/beginner.zip"
+                    download
+                    class="flex items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"
+                  >
+                    <div class="flex items-center">
+                      <i data-feather="file-text" class="w-5 h-5 mr-3 text-indigo-600 dark:text-indigo-400"></i>
+                      <span class="font-semibold text-gray-800 dark:text-gray-200"
+                        >비기너 트랙 (Jupyter Notebook)</span
+                      >
+                    </div>
+                    <i data-feather="download" class="w-5 h-5 text-gray-500"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="../../materials/challenger.zip"
+                    download
+                    class="flex items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"
+                  >
+                    <div class="flex items-center">
+                      <i data-feather="file-text" class="w-5 h-5 mr-3 text-indigo-600 dark:text-indigo-400"></i>
+                      <span class="font-semibold text-gray-800 dark:text-gray-200"
+                        >챌린저 트랙 (Jupyter Notebook)</span
+                      >
+                    </div>
+                    <i data-feather="download" class="w-5 h-5 text-gray-500"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          -->
         </div>
       </section>
     </main>
 
-    <!-- Footer Placeholder -->
+    <!-- Footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- SCRIPT FOR FAQ ACCORDION -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const accordion = document.getElementById("faq-accordion");
-        if (accordion) {
-          const questions = accordion.querySelectorAll(".faq-question");
-          questions.forEach((question) => {
-            question.addEventListener("click", () => {
-              const answer = question.nextElementSibling;
-              const icon = question.querySelector("i");
+      // --- DYNAMICALLY LOAD HEADER AND FOOTER ---
 
-              // Toggle answer visibility
-              if (answer.style.maxHeight) {
-                answer.style.maxHeight = null;
-                icon.style.transform = "rotate(0deg)";
-              } else {
-                // Temporarily set a large max-height to get scrollHeight, then set it
-                const wasOpen = answer.style.maxHeight;
-                if (!wasOpen) {
-                  answer.style.maxHeight = "1000px"; // temp value
-                  const scrollHeight = answer.scrollHeight;
-                  answer.style.maxHeight = "0px";
-                  // Force a reflow
-                  answer.offsetHeight;
-                  setTimeout(() => {
-                    answer.style.maxHeight = scrollHeight + "px";
-                    icon.style.transform = "rotate(45deg)";
-                  }, 0);
-                }
-              }
-            });
-          });
-        }
-      });
-    </script>
-
-    <!-- SCRIPT LOADER FOR HEADER & FOOTER -->
-    <script>
-      // --- DYNAMICALLY LOAD HEADER AND FOOTER (FINAL VERSION) ---
       const loadComponent = (componentPath, placeholderId, callback) => {
-        // Use a root-relative path (starts with '/') to ensure the file is always found
         fetch(componentPath)
           .then((response) => {
             if (!response.ok)
@@ -224,42 +138,35 @@
           .then((data) => {
             const placeholder = document.getElementById(placeholderId);
             if (placeholder) placeholder.innerHTML = data;
-            if (callback) callback(); // Run scripts after content is loaded
+            if (callback) callback();
           })
-          .catch((error) => {
-            console.error(`Error loading component:`, error);
-            const placeholder = document.getElementById(placeholderId);
-            if (placeholder)
-              placeholder.innerHTML = `<p class="text-red-500 text-center">Error: Could not load ${componentPath}. Please check file path and console.</p>`;
-          });
+          .catch((error) => console.error(`Error loading component:`, error));
       };
-      // 1. Load the header and then run its associated scripts
+
+      // Load the header and then initialize its scripts
       loadComponent("header-ko.html", "header-placeholder", () => {
-        // SCRIPT TO APPLY ACTIVE STYLES TO THE CURRENT MENU ITEM
+        // --- SCRIPT TO BOLD THE ACTIVE MENU ITEM ---
         const currentPage =
           window.location.pathname.split("/").pop() || "home.html";
-        if (
-          currentPage !== "home.html" &&
-          currentPage !== "index.html" &&
-          currentPage !== ""
-        ) {
+
+        if (currentPage !== "home.html") {
           const navLinks = document.querySelectorAll(
             "#main-nav a, #mobile-menu a"
           );
           navLinks.forEach((link) => {
             const linkPage = (link.getAttribute("href") || "").split("/").pop();
             if (linkPage === currentPage) {
-              if (link.closest("#main-nav")) {
-                link.className =
-                  "font-extrabold text-[#17106A] dark:text-white transition duration-300";
-              } else if (link.closest("#mobile-menu")) {
-                link.className =
-                  "block font-extrabold text-[#17106A] dark:text-white py-2";
-              }
+              link.classList.add(
+                "font-bold",
+                "text-[#17106A]",
+                "dark:text-white"
+              );
+              link.classList.remove("text-gray-600", "dark:text-gray-300");
             }
           });
         }
-        // SCRIPT FOR MOBILE MENU TOGGLE
+
+        // --- SCRIPT FOR MOBILE MENU TOGGLE ---
         const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
         if (mobileMenuButton && mobileMenu) {
@@ -271,9 +178,10 @@
           });
         }
       });
-      // 2. Load the footer and then run its associated scripts
+
+      // Load the footer and then initialize its scripts
       loadComponent("footer-ko.html", "footer-placeholder", () => {
-        // SCRIPT FOR ICONS AND DARK MODE
+        // --- SCRIPT FOR ICONS AND DARK MODE ---
         feather.replace();
         const themeToggle = document.getElementById("theme-toggle");
         if (themeToggle) {
