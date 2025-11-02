@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../../assets/image/qiya.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archives | Qiskit Fall Festival @ Yonsei 2025</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+      /* Use Inter as the default font */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+    <script>
+      // Set theme on initial load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+      <!-- Archive Section -->
+      <section id="archive" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">Archives</h2>
+          <div
+            class="w-24 h-1 bg-[#17106A] dark:bg-[#8A84E2] mx-auto mb-12"
+          ></div>
+          <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
+            <a
+              href="https://qiya-yonsei.github.io/qff-2024/"
+              class="bg-gray-100 text-gray-700 px-5 py-2 rounded-full hover:bg-indigo-100 hover:text-indigo-700 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-indigo-500/50 dark:hover:text-white transition duration-300"
+              >Qiskit Fall Festival @ Yonsei 2024</a
+            >
+          </div>
+          <div class="max-w-3xl mx-auto mt-12 aspect-video">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/videoseries?si=qncdX1fNawoA0NQn&amp;list=PLLXS3g7gThWJEPHs4N1k5NVgH_dguYWuX"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // --- DYNAMICALLY LOAD HEADER AND FOOTER ---
+
+      const loadComponent = (componentPath, placeholderId, callback) => {
+        fetch(componentPath)
+          .then((response) => {
+            if (!response.ok)
+              throw new Error(`Could not load ${componentPath}`);
+            return response.text();
+          })
+          .then((data) => {
+            const placeholder = document.getElementById(placeholderId);
+            if (placeholder) placeholder.innerHTML = data;
+            if (callback) callback();
+          })
+          .catch((error) => console.error(`Error loading component:`, error));
+      };
+
+      // Load the header and then initialize its scripts
+      loadComponent("header.html", "header-placeholder", () => {
+        // --- SCRIPT TO BOLD THE ACTIVE MENU ITEM ---
+        const currentPage =
+          window.location.pathname.split("/").pop() || "home.html";
+
+        if (currentPage !== "home.html") {
+          const navLinks = document.querySelectorAll(
+            "#main-nav a, #mobile-menu a"
+          );
+          navLinks.forEach((link) => {
+            const linkPage = (link.getAttribute("href") || "").split("/").pop();
+            if (linkPage === currentPage) {
+              link.classList.add(
+                "font-bold",
+                "text-[#17106A]",
+                "dark:text-white"
+              );
+              link.classList.remove("text-gray-600", "dark:text-gray-300");
+            }
+          });
+        }
+
+        // --- SCRIPT FOR MOBILE MENU TOGGLE ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener("click", () =>
+            mobileMenu.classList.toggle("hidden")
+          );
+          mobileMenu.addEventListener("click", (e) => {
+            if (e.target.tagName === "A") mobileMenu.classList.add("hidden");
+          });
+        }
+      });
+
+      // Load the footer and then initialize its scripts
+      loadComponent("footer.html", "footer-placeholder", () => {
+        // --- SCRIPT FOR ICONS AND DARK MODE ---
+        feather.replace();
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            localStorage.theme = document.documentElement.classList.contains(
+              "dark"
+            )
+              ? "dark"
+              : "light";
+            feather.replace();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
